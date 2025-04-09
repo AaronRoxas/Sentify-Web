@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Sentify | Spotify Review Sentiment Analyzer</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap">
+</head>
+<body class="dark">
+    <div class="theme-toggle">
+        <input type="checkbox" id="theme-switch" class="theme-switch">
+        <label for="theme-switch" class="theme-switch-label">
+            <span class="theme-switch-icon"></span>
+        </label>
+    </div>
+
+    <div class="container">
+        <header>
+            <a href="https://aaronroxas.vercel.app/" class="back-arrow" aria-label="Go back">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <polyline points="15 18 9 12 15 6"></polyline>
+                </svg>
+            </a>
+            <div class="logo">
+                <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M12 2a10 10 0 1 0 10 10 10 10 0 0 0-10-10zm3.5 14-3.5-2-3.5 2V8.5L12 11l3.5-2.5z"></path>
+                </svg>
+                <h1>Sentify</h1>
+            </div>
+            <div class="subtitle">Analyze reviews using sentiment analysis</div>
+        </header>
+
+        <main>
+            <div class="input-section">
+                <h2>Enter an app review to analyze</h2>
+                <div class="input-methods">
+                    <div class="input-container">
+                        <textarea id="review-input" placeholder="Paste or type an app review here..."></textarea>
+                    </div>
+                </div>
+                <button id="analyze-btn" onclick="predictSentiment()">Analyze Sentiment</button>
+            </div>
+
+            <div class="result-section" id="result-section">
+                <div class="result-container">
+                    <div class="sentiment-meter">
+                        <div class="meter-labels">
+                            <div class="meter-label negative">Negative</div>
+                            <div class="meter-label neutral">Neutral</div>
+                            <div class="meter-label positive">Positive</div>
+                        </div>
+                        <div class="meter-scale">
+                            <div class="meter-pointer" id="meter-pointer"></div>
+                        </div>
+                    </div>
+
+
+                    <h3 id="sentiment-result">Enter a review to see the sentiment</h3>
+                    <p id="sentiment-description">This will analyze the review using Random Forest</p>
+                </div>
+            </div>
+
+        </main>
+
+
+        <footer>
+            <p>2025 Sentify | Lab Activity in Artificial Intelligence</p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
